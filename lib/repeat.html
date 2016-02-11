@@ -37,8 +37,9 @@
 </script>
 
 <script type="text/x-red" data-help-name="repeat">
-    <p>Allow a message to pass through this node for an specific number of times, after which it will be discarded. Unveiling the ability to loop over a flow N times.</p>
+    <p>Allow a message to pass through this node for an specific number of times, after which it will be discarded, unveiling the ability to limit the loops over a flow to N times.</p>
     <p>If <code>Else Output</code> is activated, a second output is enabled that will receive the message once when the repetitions have been exhausted</p>
+    <p>The number of times the message can loop can be configured in the node or specified in the <code>msg.repetitions</code> property which, as usual, will take precedence over the node configuration</p>
     <p>Note: This node will create a new property <b>msg._loopController</b> that will hold the loop state for that message, including information about the <b>loops</b> executed
        and the <b>remaining</b> loops.</p>
     <p><b>Currently there is no support for more than one <code>repeat</code> node operating upon a message simultaneously</b></p>

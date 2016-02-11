@@ -8,6 +8,10 @@ This unveils the ability to limit the loops over a flow to N times.
 
 Optionally a second output can be enabled to grasp the message once the repetitions are exhausted.
 
+Note: See info panel in NodeRED for up-to-date usage details. 
+
+![Screenshot]()
+
 Install
 -------
 
