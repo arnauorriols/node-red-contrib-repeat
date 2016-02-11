@@ -1,8 +1,12 @@
 Repeat NodeRED Node
 =====================
 
+[![NPM](https://nodei.co/npm/node-red-contrib-restart.png)](https://nodei.co/npm/node-red-contrib-restart/)
+
 Allow a message to pass through this node for an specific number of times, after which it will be discarded.
- This unveils the ability to loop over a flow N times. 
+This unveils the ability to limit the loops over a flow to N times. 
+
+Optionally a second output can be enabled to grasp the message once the repetitions are exhausted.
 
 Install
 -------
