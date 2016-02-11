@@ -4,13 +4,19 @@
         color: '#E2D96E',
         defaults: {
             name: {value: ""},
-            repetitions: {}
+            repetitions: {},
+            elseOutput: {value: false},
+            outputs: {value: 1}  // Ofuscated way to persist the number of outputs of the node
         },
-        inputs:1,
-        outputs:1,
+        inputs: 1,
+        outputs: 1,
         icon: "repeat.png",
         label: function() {
             return this.name || "Repeat " + (this.repetitions || "N") + " times";
+        },
+        oneditsave: function () {
+            var elseOutputActivated = document.getElementById('node-input-elseOutput').checked;
+            this.outputs = elseOutputActivated ? 2 : 1;
         }
     });
 </script>
@@ -21,12 +27,19 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-repetitions"><i class="icon-tag"></i> Repetitions</label>
-        <input type="number" id="node-input-repetitions">
+        <label for="node-input-repetitions"><i class="fa fa-undo"></i> Repetitions</label>
+        <input type="number" id="node-input-repetitions", style="width:80px">
+    </div>
+    <div class="form-row">
+        <label for="node-input-elseOutput"><i class="icon-random"></i> Else Output</label>
+        <input type="checkbox" id="node-input-elseOutput", style="width:auto;vertical-align:top">
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="repeat">
-<p>Allow a message to pass through this node for an specific number of times, after which it will be discarded.</p>
-<p>This unveils the ability to loop over a flow N times.</p>
+    <p>Allow a message to pass through this node for an specific number of times, after which it will be discarded. Unveiling the ability to loop over a flow N times.</p>
+    <p>If <code>Else Output</code> is activated, a second output is enabled that will receive the message once when the repetitions have been exhausted</p>
+    <p>Note: This node will create a new property <b>msg._loopController</b> that will hold the loop state for that message, including information about the <b>loops</b> executed
+       and the <b>remaining</b> loops.</p>
+    <p><b>Currently there is no support for more than one <code>repeat</code> node operating upon a message simultaneously</b></p>
 </script>
