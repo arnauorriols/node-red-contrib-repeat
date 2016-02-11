@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-repeat",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "repository": {
     "type": "git",
     "url": "https://github.com/arnauorriols/node-red-contrib-repeat"
