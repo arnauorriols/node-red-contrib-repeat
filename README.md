@@ -10,7 +10,7 @@ Optionally a second output can be enabled to grasp the message once the repetiti
 
 Note: See info panel in NodeRED for up-to-date usage details. 
 
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/arnauorriols/node-red-contrib-repeat/master/screenshot.png)
 
 Install
 -------
